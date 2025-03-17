@@ -1,3 +1,4 @@
+import { useCookies } from '@vueuse/integrations/useCookies';
 import { onMounted, ref } from 'vue';
 
 type Appearance = 'light' | 'dark' | 'system';
@@ -18,13 +19,19 @@ export function updateTheme(value: Appearance) {
 }
 
 const setCookie = (name: string, value: string, days = 365) => {
-    if (typeof document === 'undefined') {
+    if (typeof navigator === 'undefined') {
         return;
     }
 
     const maxAge = days * 24 * 60 * 60;
 
-    document.cookie = `${name}=${value};path=/;max-age=${maxAge};SameSite=Lax`;
+    const cookies = useCookies([name]);
+
+    cookies.set(name, value, {
+        maxAge,
+        path: '/',
+        sameSite: 'lax',
+    });
 };
 
 const mediaQuery = () => {
