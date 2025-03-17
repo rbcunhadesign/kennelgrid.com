@@ -17,13 +17,29 @@ const submit = () => {
 <template>
     <Head title="Login" />
 
-    <form @submit.prevent="submit" class="space-y-4">
+    <form
+        @submit.prevent="submit"
+        class="space-y-4"
+    >
         <div>
-            <input type="email" v-model="form.email" placeholder="Email" required autofocus autocomplete="username" />
+            <input
+                type="email"
+                v-model="form.email"
+                placeholder="Email"
+                required
+                autofocus
+                autocomplete="username"
+            />
         </div>
 
         <div>
-            <input type="password" v-model="form.password" placeholder="************" required autocomplete="current-password" />
+            <input
+                type="password"
+                v-model="form.password"
+                placeholder="************"
+                required
+                autocomplete="current-password"
+            />
         </div>
 
         <button type="submit">Submit</button>
