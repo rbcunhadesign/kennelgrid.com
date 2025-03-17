@@ -1,5 +1,3 @@
-<script setup lang="ts">
-let hello: string = '';
-</script>
+<script setup lang="ts"></script>
 
 <template>Hello world!</template>

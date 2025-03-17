@@ -4,7 +4,6 @@ import { resolve } from 'node:path';
 import path from 'path';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
-import oxlintPlugin from 'vite-plugin-oxlint';
 
 export default defineConfig({
     plugins: [
@@ -23,7 +22,6 @@ export default defineConfig({
         checker({
             vueTsc: true,
         }),
-        oxlintPlugin(),
     ],
     resolve: {
         alias: {
