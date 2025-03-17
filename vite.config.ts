@@ -3,7 +3,6 @@ import laravel from 'laravel-vite-plugin';
 import { resolve } from 'node:path';
 import path from 'path';
 import { defineConfig } from 'vite';
-import checker from 'vite-plugin-checker';
 
 export default defineConfig({
     plugins: [
@@ -18,9 +17,6 @@ export default defineConfig({
                     includeAbsolute: false,
                 },
             },
-        }),
-        checker({
-            vueTsc: true,
         }),
     ],
     resolve: {
