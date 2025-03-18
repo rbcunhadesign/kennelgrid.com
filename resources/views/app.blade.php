@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['dark' => ($appearance ?? 'system') == 'dark'])>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"  @class(['text-surface-950 antialiased lg:bg-surface-100 dark:bg-surface-900 dark:text-white dark:lg:bg-surface-950', 'dark' => ($appearance ?? 'system') == 'dark'])>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,7 +28,7 @@
     @vite(['resources/js/app.ts'])
     @inertiaHead
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans">
 @inertia
 </body>
 </html>
