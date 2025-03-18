@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head, useForm } from '@inertiajs/vue3';
+import { Button, InputText, Password } from 'primevue';
 
 const form = useForm({
     email: '',
@@ -22,7 +23,7 @@ const submit = () => {
         class="space-y-4"
     >
         <div>
-            <input
+            <InputText
                 type="email"
                 v-model="form.email"
                 placeholder="Email"
@@ -33,15 +34,20 @@ const submit = () => {
         </div>
 
         <div>
-            <input
+            <Password
                 type="password"
                 v-model="form.password"
                 placeholder="************"
                 required
                 autocomplete="current-password"
+                :feedback="false"
             />
         </div>
 
-        <button type="submit">Submit</button>
+        <Button
+            type="submit"
+            label="Login"
+            :loading="form.processing"
+        />
     </form>
 </template>
