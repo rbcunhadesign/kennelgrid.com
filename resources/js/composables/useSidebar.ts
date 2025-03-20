@@ -1,10 +1,10 @@
 import { useMediaQuery, useStorage } from '@vueuse/core';
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
 
 export function useSidebar() {
     const open = useStorage('sidebar:state', true);
     const openMobile = ref(false);
-    const isMobile = computed(() => useMediaQuery('(max-width: 1024px)').value);
+    const isMobile = useMediaQuery('(max-width: 1024px)');
 
     const setOpen = (value: boolean) => {
         open.value = value;
@@ -23,5 +23,6 @@ export function useSidebar() {
         openMobile,
         isMobile,
         toggleSidebar,
+        setOpenMobile,
     };
 }
