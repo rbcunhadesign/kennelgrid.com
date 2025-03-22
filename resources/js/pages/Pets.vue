@@ -5,7 +5,7 @@ import { Link } from '@inertiajs/vue3';
 
 <template>
     <AppLayout>
-        Hello World!
-        <Link :href="route('pets')">Pets</Link>
+        Pets Page
+        <Link :href="route('dashboard')">Dashboard</Link>
     </AppLayout>
 </template>
